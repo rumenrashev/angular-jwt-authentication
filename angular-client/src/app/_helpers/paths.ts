@@ -1,0 +1,10 @@
+const AUTHENTICATION_PATH = "/authentication";
+const LOGIN_PATH = AUTHENTICATION_PATH + "/login";
+const REGISTER_PATH = AUTHENTICATION_PATH + "/register";
+const LOGOUT_PATH = AUTHENTICATION_PATH + "/logout";
+
+export {
+  LOGIN_PATH,
+  REGISTER_PATH,
+  LOGOUT_PATH
+}
