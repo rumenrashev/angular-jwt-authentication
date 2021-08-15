@@ -20,4 +20,8 @@ export class StorageService {
   getToken(){
     return localStorage.getItem('token');
   }
+
+  removeCredentials(){
+    localStorage.clear();
+  }
 }

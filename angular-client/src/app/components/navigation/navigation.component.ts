@@ -19,10 +19,15 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loginPath = LOGOUT_PATH;
+    this.loginPath = LOGIN_PATH.substr(1);
     this.registerPath = REGISTER_PATH;
-    this.loginPath = LOGOUT_PATH;
+    this.logoutPath = LOGOUT_PATH;
     this.username = this.storageService.getUsername();
+  }
+
+  logout(): void{
+    this.storageService.removeCredentials();
+    this.reloadPage();
   }
 
   reloadPage(): void {
