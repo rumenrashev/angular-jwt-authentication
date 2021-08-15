@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from "../../_helpers/storage/storage.service";
-import {LOGIN_PATH,REGISTER_PATH,LOGOUT_PATH} from "../../_helpers/paths";
+import {LOGIN_PATH,REGISTER_PATH} from "../../_helpers/paths";
 
 @Component({
   selector: '#site-header',
@@ -21,13 +21,12 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
     this.loginPath = LOGIN_PATH.substr(1);
     this.registerPath = REGISTER_PATH;
-    this.logoutPath = LOGOUT_PATH;
     this.username = this.storageService.getUsername();
   }
 
   logout(): void{
     this.storageService.removeCredentials();
-    this.reloadPage();
+    window.location.replace('/');
   }
 
   reloadPage(): void {
